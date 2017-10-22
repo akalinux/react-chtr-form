@@ -25,6 +25,7 @@
     "babel-register": "6.x",
     "mocha": "4.x",
     "react": "16.x",
+    "react-chtr-object-methods": "1.x",
     "unit.js": "2.x"
   }
 }
