@@ -2,7 +2,7 @@
   "name": "react-chtr-form",
   "version": "1.0.9",
   "description": "Chtr React Data Centric form generation library",
-  "main": "chtr-form.jsx",
+  "main": "src/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",

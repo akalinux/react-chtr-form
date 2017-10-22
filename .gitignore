@@ -12,5 +12,5 @@ yarn-error.log
 public/site.js
 .includepath
 .settings/*
-src/site.*
+src/site.jsx
 node_modules/*
