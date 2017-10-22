@@ -19,6 +19,9 @@
     "forms",
     "generation"
   ],
+  "files": [
+    "build/"
+  ],
   "author": "Michael Shipper <Michael.Shipper@Charter.com>",
   "license": "MIT",
   "dependencies": {
