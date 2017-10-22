@@ -386,7 +386,7 @@ module.exports = {
     ChtFormElements: ChtFormElements,
 };
 
-
+export default ChtrForm;
 
 
 class ChtFormContainerAdd extends React.Component {
