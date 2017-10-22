@@ -20,12 +20,16 @@
   "author": "Michael Shipper <Michael.Shipper@Charter.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-plugin-minify-dead-code-elimination": "^0.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "6.x",
     "babel-preset-env": "1.x",
     "babel-register": "6.x",
     "mocha": "4.x",
     "react": "16.x",
     "react-chtr-object-methods": "1.x",
+    "react-dom": "^16.0.0",
     "unit.js": "2.x"
   }
 }
