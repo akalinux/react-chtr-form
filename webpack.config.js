@@ -36,7 +36,9 @@ var config = {
 	output : {
 		path : BUILD_DIR,
 		filename : 'index.jsx',
-		libraryTarget : 'commonjs2'
+		libraryTarget : 'var',
+		library: 'ChtrForm',
+		
 	},
 	devtool : sourcemap,
 	module : {
