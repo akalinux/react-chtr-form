@@ -2,60 +2,11 @@ var webpack = require('webpack');
 var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, 'src');
 var APP_DIR = path.resolve(__dirname, '.');
-const ShakePlugin = require('webpack-common-shake').Plugin;
+const
+ShakePlugin = require('webpack-common-shake').Plugin;
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-/*
-var babel_config = {
-	env : {
-		development : {
-			compact : false,
-			presets : [ [ 'react' ],
-			// 'es2015'
-			[ 'env', {
-				include : [],
-				loose : true,
-				modules : false,
-				"useBuiltIns" : true,
-				"browserslist" : [ "> 5%", "last 2 versions" ]
-			} ], ],
-			plugins : [ "transform-react-jsx", "transform-class-properties",
-					"transform-async-to-generator", ]
-		},
-		production : {
-			compact : true,
-			presets : [ [ 'react' ], [ 'env', {
-				include : [],
-				loose : true,
-				modules : false,
-				"useBuiltIns" : true,
-				"browserslist" : [ "> 5%", "last 2 versions" ]
-			} ],
-			// [ "minify", {} ],
-			],
-			plugins : [ "babel-plugin-transform-react-jsx",
-					"transform-class-properties",
-					"transform-async-to-generator",
-					[ "minify-dead-code-elimination", {
-						"optimizeRawSize" : true
-					} ] ]
-		}
-	}
-};
-*/
-
-var babel_loader = {
-	test : /\.jsx?$/,
-	loader : "babel-loader",
-	query :  {
-			compact : true,
-			presets : [ [ 'react' ], [ 'env', {} ],
-			],
-			plugins : [ "babel-plugin-transform-react-jsx",
-					"transform-class-properties",
-			]
-		}
-};
+const
+UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 var plugins = [];
 
@@ -89,17 +40,27 @@ var config = {
 	},
 	devtool : sourcemap,
 	module : {
-		loaders : [ babel_loader, {
-			test : /\.css$/,
-			loaders : [ "style-loader", "css-loader" ],
-		}, {
-			test : /\.(jpe?g|png|gif)$/i,
-			loader : "file-loader",
-			query : {
-				name : '[name].[ext]',
-				outputPath : 'images/'
-			}
-		}, ],
+		loaders : [
+				{
+					test : /\.jsx?$/,
+					loader : "babel-loader",
+					query : {
+						compact : true,
+						presets : [ [ 'react' ], [ 'env', {} ], ],
+						plugins : [ "babel-plugin-transform-react-jsx",
+								"transform-class-properties", ]
+					}
+				}, {
+					test : /\.css$/,
+					loaders : [ "style-loader", "css-loader" ],
+				}, {
+					test : /\.(jpe?g|png|gif)$/i,
+					loader : "file-loader",
+					query : {
+						name : '[name].[ext]',
+						outputPath : 'images/'
+					}
+				}, ],
 	},
 	plugins : plugins,
 };
