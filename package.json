@@ -1,6 +1,6 @@
 {
   "name": "react-chtr-form",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Chtr React Data Centric form generation library",
   "main": "src/index.jsx",
   "scripts": {
