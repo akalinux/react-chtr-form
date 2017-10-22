@@ -54,7 +54,11 @@
     ],
     "plugins": [
       "babel-plugin-transform-react-jsx",
-      "transform-class-properties"
+      "transform-class-properties",
+      "transform-react-inline-elements"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-inline-elements": "^6.22.0"
   }
 }

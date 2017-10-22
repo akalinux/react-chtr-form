@@ -48,7 +48,7 @@ var config = {
 						compact : true,
 						presets : [ [ 'react' ], [ 'env', {} ], ],
 						plugins : [ "babel-plugin-transform-react-jsx",
-								"transform-class-properties", ]
+								"transform-class-properties","transform-react-inline-elements" ]
 					}
 				}, {
 					test : /\.css$/,
