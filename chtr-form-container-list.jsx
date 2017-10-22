@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
 import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.jsx';
 
+
 class ChtrList extends React.Component {
 
     static buildData( props ) {
@@ -116,8 +117,7 @@ ChtrList.defaultProps = {
 Object.assign( ChtrList.defaultProps, css );
 ChtFormElements['list'] = ChtrList;
 
-module.exports={
-        ChtrList: ChtrList,
-}
+
+module.exports={ ChtrList: ChtrList, ChtFormElements: ChtFormElements };
 
 // end of the module
