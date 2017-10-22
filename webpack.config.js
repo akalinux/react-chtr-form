@@ -11,23 +11,6 @@ UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 var plugins = [];
 
 var sourcemap = '#inline-source-map';
-plugins.unshift(new ShakePlugin(), new webpack.optimize.UglifyJsPlugin({
-	sourceMap : true,
-	warnings : true,
-	uglifyOptions : {
-		compress : {
-			dead_code : true,
-		},
-	},
-}), new webpack.DefinePlugin({
-	process : {
-		env : {
-			NODE_ENV : JSON.stringify('production'),
-			BABLE_ENV : JSON.stringify('production'),
-		}
-	}
-}), new webpack.optimize.ModuleConcatenationPlugin(),
-		new webpack.optimize.AggressiveMergingPlugin());
 
 var config = {
 	entry : [  APP_DIR + '/chtr-form.jsx',
