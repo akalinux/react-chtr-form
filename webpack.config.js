@@ -36,8 +36,8 @@ var config = {
 	output : {
 		path : BUILD_DIR,
 		filename : 'index.jsx',
-		//libraryTarget : 'commonjs2',
-		libraryTarget : 'umd',
+		libraryTarget : 'commonjs2',
+		//libraryTarget : 'umd',
 		//library: 'ChtrForm',
 		
 	},
