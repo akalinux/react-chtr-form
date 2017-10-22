@@ -30,7 +30,7 @@ plugins.unshift(new ShakePlugin(), new webpack.optimize.UglifyJsPlugin({
 		new webpack.optimize.AggressiveMergingPlugin());
 
 var config = {
-	entry : [ 'babel-polyfill', APP_DIR + '/chtr-form.jsx',
+	entry : [  APP_DIR + '/chtr-form.jsx',
 			APP_DIR + '/chtr-form.css' ],
 	target : 'web',
 	output : {

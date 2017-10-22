@@ -1,5 +1,4 @@
 'use strict';
-import 'babel-polyfill';
 import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
