@@ -2,9 +2,9 @@
 import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
-import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.jsx';
-import './chtr-form-input.jsx';
-import { ChtrList } from './chtr-form-container-list.jsx';
+import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.js';
+import './chtr-form-input.js';
+import { ChtrList } from './chtr-form-container-list.js';
 import './chtr-form-container-hash.js';
 import './chtr-form-checkbox.js';
 import './chtr-form-radio-set.js';
