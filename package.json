@@ -1,6 +1,6 @@
 {
   "name": "react-chtr-form",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Chtr React Data Centric form generation library",
   "main": "chtr-form.jsx",
   "scripts": {
@@ -41,8 +41,19 @@
     "webpack-common-shake": "^1.5.3"
   },
   "babel": {
-	"compact": true,
-	"presets": [ [ "react" ], [ "env", {} ] ],
-	"plugins": [ "babel-plugin-transform-react-jsx", "transform-class-properties" ]
-  } 
+    "compact": true,
+    "presets": [
+      [
+        "react"
+      ],
+      [
+        "env",
+        {}
+      ]
+    ],
+    "plugins": [
+      "babel-plugin-transform-react-jsx",
+      "transform-class-properties"
+    ]
+  }
 }
