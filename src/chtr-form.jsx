@@ -12,7 +12,6 @@ import './chtr-form-select.js';
 import './chtr-form-multi-select.js';
 import './chtr-form-textarea.js';
 
-//
 
 /**
  * Root form Container.  Used to contain states and manage configs

@@ -20,7 +20,8 @@
     "generation"
   ],
   "files": [
-    "build/"
+    "build/",
+    "chtr-form.css"
   ],
   "author": "Michael Shipper <Michael.Shipper@Charter.com>",
   "license": "MIT",
