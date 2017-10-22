@@ -32,17 +32,16 @@
     "react-dom": "^16.0.0",
     "unit.js": "2.x"
   },
-  {
-     compact : false,
-     presets : [
-       [ 'react' ],
-       //'es2015'
-       [ 'env', { include : [] } ],
+  "babel":{
+     "compact": false,
+     "presets": [
+       [ "react" ],
+       [ "env", { "include": [] } ]
      ],
-    plugins : [
+    "plugins": [
       "transform-react-jsx",
       "transform-class-properties",
-      "transform-async-to-generator",
+      "transform-async-to-generator"
     ]
   }
 }
