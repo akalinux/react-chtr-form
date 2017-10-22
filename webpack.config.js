@@ -44,6 +44,7 @@ var config = {
 				{
 					test : /\.jsx?$/,
 					loader : "babel-loader",
+                                        exclude: /node_modules/,
 					query : {
 						compact : true,
 						presets : [ [ 'react' ], [ 'env', {} ], ],
