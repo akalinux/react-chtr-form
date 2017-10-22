@@ -2,11 +2,10 @@
   "name": "react-chtr-form",
   "version": "1.0.19",
   "description": "Chtr React Data Centric form generation library",
-  "main": "src/index.jsx",
+  "main": "build/chtr-form.js",
   "scripts": {
     "test": "mocha --require babel-register ./test/test.jsx",
-    "start": "webpack --watch",
-    "build": "babel chtr-form.jsx --out-file src/index.jsx",
+    "build": "babel -s inline src --out-dir build/  --compact true --minified",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -37,25 +36,7 @@
     "react-dom": "^16.x",
     "unit.js": "2.x"
   },
-  "babel": {
-    "compact": true,
-    "presets": [
-      [
-        "react"
-      ],
-      [
-        "env",
-        {}
-      ]
-    ],
-    "plugins": [
-      "babel-plugin-transform-react-jsx",
-      "transform-class-properties",
-      "transform-react-inline-elements"
-    ]
-  },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-react-inline-elements": "^6.22.0"
+    "babel-cli": "^6.26.0"
   }
 }
