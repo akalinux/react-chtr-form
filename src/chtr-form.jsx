@@ -5,12 +5,12 @@ import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-cht
 import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.jsx';
 import './chtr-form-input.jsx';
 import { ChtrList } from './chtr-form-container-list.jsx';
-import './chtr-form-container-hash.jsx';
-import './chtr-form-checkbox.jsx';
-import './chtr-form-radio-set.jsx';
-import './chtr-form-select.jsx';
-import './chtr-form-multi-select.jsx';
-import './chtr-form-textarea.jsx';
+import './chtr-form-container-hash.js';
+import './chtr-form-checkbox.js';
+import './chtr-form-radio-set.js';
+import './chtr-form-select.js';
+import './chtr-form-multi-select.js';
+import './chtr-form-textarea.js';
 
 //
 

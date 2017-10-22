@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
-import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.jsx';
+import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.js';
 
 
 class ChtrList extends React.Component {

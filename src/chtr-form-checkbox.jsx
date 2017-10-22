@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.jsx';
+import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.js';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
 
 class ChtrFormCheckBox extends React.Component {
