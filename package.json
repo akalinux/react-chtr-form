@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --require babel-register ./test/test.jsx",
     "build": "babel -s inline src --out-dir build/  --compact true --minified",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
