@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.jsx';
-import { cloneObject, mergeObjects, objectsDiffer, cloneProps } from './ChtrObjectMethods.jsx';
+import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
 import { ChtrList } from './chtr-form-container-list.jsx';
 import { ChtrForm } from './chtr-form.jsx';
 

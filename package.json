@@ -4,7 +4,9 @@
   "description": "Chtr React Data Centric form generation library",
   "main": "chtr-form.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "NODE_ENV=production webpack -d"
   },
   "repository": {
     "type": "git",
@@ -20,35 +22,22 @@
   "author": "Michael Shipper <Michael.Shipper@Charter.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-loader": "^7.1.2",
     "babel-plugin-minify-dead-code-elimination": "^0.2.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "6.x",
-    "babel-preset-env": "1.x",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babel-register": "6.x",
+    "css-loader": "^0.28.7",
     "mocha": "4.x",
     "react": "16.x",
     "react-chtr-object-methods": "1.x",
     "react-dom": "^16.0.0",
-    "unit.js": "2.x"
-  },
-  "babel": {
-    "compact": false,
-    "presets": [
-      [
-        "react"
-      ],
-      [
-        "env",
-        {
-          "include": []
-        }
-      ]
-    ],
-    "plugins": [
-      "transform-react-jsx",
-      "transform-class-properties",
-      "transform-async-to-generator"
-    ]
+    "style-loader": "^0.19.0",
+    "unit.js": "2.x",
+    "webpack": "^3.8.1",
+    "webpack-common-shake": "^1.5.3"
   }
 }

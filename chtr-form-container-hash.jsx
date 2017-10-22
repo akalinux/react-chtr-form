@@ -1,6 +1,6 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
-import { cloneObject, mergeObjects, objectsDiffer, cloneProps } from './ChtrObjectMethods.jsx';
+import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
 import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.jsx';
 
 class ChtrHash extends React.Component {
