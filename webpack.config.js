@@ -84,7 +84,7 @@ var config = {
 	target : 'web',
 	output : {
 		path : BUILD_DIR,
-		filename : 'index.js',
+		filename : 'index.jsx',
 		libraryTarget : 'commonjs2'
 	},
 	devtool : sourcemap,
