@@ -22,7 +22,7 @@ class ChtrForm extends React.Component {
 
         let data;
         if ( ChtFormElements.hasOwnProperty( props.display.type ) ) {
-            const display = props.display;
+            const display = cloneObject(props.display);
             display.displayPath = ['display']
             display.dataPath = ['data']
             data = ChtFormElements[target.display.type].buildData( display );
@@ -152,7 +152,7 @@ class ChtrForm extends React.Component {
             }
             this.setState( state );
         }
-
+        this.props.onChange(cloneObject(state));
 
     }
 
@@ -278,6 +278,7 @@ class ChtrForm extends React.Component {
         parentData[srcId] = dstData;
 
         this.setState( state );
+        this.props.onChange(cloneObject(state));
 
     }
 
@@ -311,6 +312,10 @@ class ChtrForm extends React.Component {
         this.setState( state );
         this.props.onReset();
 
+    }
+    
+    cloneData () {
+        return cloneObject(this.state.data);
     }
 
     componentWillReceiveProps( props ) {

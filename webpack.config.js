@@ -1,41 +1,31 @@
 var webpack = require('webpack');
 var path = require('path');
-var BUILD_DIR = path.resolve(__dirname, 'src');
+var BUILD_DIR = path.resolve(__dirname, 'demo');
 var APP_DIR = path.resolve(__dirname, '.');
-const
-ShakePlugin = require('webpack-common-shake').Plugin;
-
-const
-UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-
-var plugins = [];
-
-var sourcemap = '#inline-source-map';
 
 var config = {
-	entry : [  APP_DIR + '/chtr-form.jsx',
-			APP_DIR + '/chtr-form.css' ],
-	target : 'web',
-	output : {
-		path : BUILD_DIR,
-		filename : 'index.jsx',
-		libraryTarget : 'commonjs2',
-		//libraryTarget : 'umd',
-		//library: 'ChtrForm',
+	entry : [  
+		BUILD_DIR + '/demo_src.jsx',
+		APP_DIR + '/chtr-form.css' 
+		],
+	    target : 'web',
+	    output : {
+		  path : BUILD_DIR,
+		  filename : 'site.js',
 		
 	},
-	devtool : sourcemap,
+	devtool : '#inline-source-map',
 	module : {
 		loaders : [
 				{
 					test : /\.jsx?$/,
 					loader : "babel-loader",
-                                        exclude: /node_modules/,
 					query : {
 						compact : true,
 						presets : [ [ 'react' ], [ 'env', {} ], ],
 						plugins : [ "babel-plugin-transform-react-jsx",
-								"transform-class-properties","transform-react-inline-elements" ]
+								"transform-class-properties" ]
+				
 					}
 				}, {
 					test : /\.css$/,
@@ -49,7 +39,15 @@ var config = {
 					}
 				}, ],
 	},
-	plugins : plugins,
+	plugins : [new webpack.optimize.UglifyJsPlugin({
+		  sourceMap : true,
+		  warnings : true,
+		  uglifyOptions : {
+			compress : {
+				dead_code : true,
+			},
+		},
+	})],
 };
 
 module.exports = config;

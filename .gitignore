@@ -13,4 +13,5 @@ public/site.js
 .includepath
 .settings/*
 node_modules/*
+demo/site.js
 build/*
