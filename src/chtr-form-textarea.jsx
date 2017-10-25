@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.js';
+import { ChtFormElements } from './chtr-form-elements.js';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
 
 class ChtrFormTextArea extends React.Component {
@@ -82,7 +82,6 @@ const css = {
     classNameInputContainer: "chtr-form-textarea-container",
     classNameInputTextDefault: "chtr-form-textarea-container",
 };
-ChtrFormCss['textarea']=css;
 
 ChtrFormTextArea.defaultProps = {
     onChange: function( displayPath, dataPath, props ) { },

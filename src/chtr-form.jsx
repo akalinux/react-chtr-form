@@ -2,7 +2,7 @@
 import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
-import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.js';
+import { ChtFormElements } from './chtr-form-elements.js';
 import './chtr-form-input.js';
 import { ChtrList } from './chtr-form-container-list.js';
 import './chtr-form-container-hash.js';
@@ -11,6 +11,8 @@ import './chtr-form-radio-set.js';
 import './chtr-form-select.js';
 import './chtr-form-multi-select.js';
 import './chtr-form-textarea.js';
+import './chtr-form-password.js';
+import './chtr-form-watch.js';
 
 
 /**
@@ -45,10 +47,21 @@ class ChtrForm extends React.Component {
         super( props );
         this.state = this.buildStateFromProps( props );
         this.submitChecks = {};
+        this.watch={};
 
         this.handleChange = this.handleChange.bind( this );
         this.handleValidate = this.handleValidate.bind( this );
 
+    }
+    
+    registerWatch (dataPath,callback) {
+        const key=dataPath.join('.');
+        this.watch[key]=callback;
+    }
+    
+    deleteWatch (dataPath) {
+        const key=dataPath.join('.');
+        delete this.watch[key];
     }
 
     /**
@@ -182,6 +195,12 @@ class ChtrForm extends React.Component {
 
         this.pushPathValue( state, displayPath, props );
         this.pushPathValue( state, dataPath, props.input );
+        const key=dataPath.join('.');
+        
+        
+        if(this.watch.hasOwnProperty(key)) {
+            this.watch[key](props.input,state);
+        }
         this.setState( state );
         this.props.onChange( cloneObject( state ), dataPath.slice( 0 ) );
     }
@@ -326,6 +345,7 @@ class ChtrForm extends React.Component {
     renderObject( row, displayPath, dataPath ) {
         const key = displayPath.join( '-' );
         if ( ChtFormElements.hasOwnProperty( row.type ) ) {
+            
             const Target = ChtFormElements[row.type];
             return <Target
                 key={key} {...row}
@@ -350,8 +370,8 @@ class ChtrForm extends React.Component {
                 <div className={this.state.classNameFormDiv}>{form}</div>
 
                 <div className={this.state.classNameSubmitRow} >
-                    <input className={this.state.classNameButton} onClick={this.handleReset.bind( this )} type="button" value={this.state.resetText} />
-                    <input onClick={this.handleSubmit.bind( this )} className={this.state.classNameButton} type="button" value={this.state.submitText} />
+                    {this.state.showReset ? <input className={this.state.classNameButton} onClick={this.handleReset.bind( this )} type="button" value={this.state.resetText} /> : ""}
+                    {this.state.showSubmit ? <input onClick={this.handleSubmit.bind( this )} className={this.state.classNameButton} type="button" value={this.state.submitText} /> : "" }
                 </div>
             </div> );
     }
@@ -366,17 +386,16 @@ const css = {
     classNameFormError: "chtr-form-error",
 };
 
-ChtrFormCss['chtr-form'] = css;
 
 ChtrForm.defaultProps = {
     display: { type: 'text', label: "I am the default imput object", input: "this is my value!" },
-    showSUbmit: true,
+    showSubmit: true,
     showReset: true,
     submitText: "Submit",
     resetText: "Rest",
     formError: false,
     name: "form",
-    label: "I am a form",
+    label: "",
     errorText: "Some fields are not filled out properly",
     onSubmit: function() { },
     onReset: function() { },
@@ -463,7 +482,7 @@ class ChtFormContainerAdd extends React.Component {
         const args = {};
         Object.assign( args, ChtFormContainerAdd.defaultFormProps, this.state.form );
 
-        return <ChtrForm {...args} onReset={this.handleReset} onChange={this.handleChnage} onSubmit={this.handleSubmit} />
+        return <ChtrForm {...args}  showReset={false} label={this.state.label} onReset={this.handleReset} onChange={this.handleChnage} onSubmit={this.handleSubmit} />
     }
 
     render() {
@@ -484,19 +503,20 @@ const cssSubForm = {};
 
 ChtFormContainerAdd.defaultFormProps = {
     classNameFormContainer: "chtr-form-container",
-    classNameFormHeader: "chtr-form-header",
+    classNameFormHeader: "chtr-subform-header",
     classNameHeaderLine: "",
-    classNameSubmitRow: "chtr-form-submit-row",
+    classNameSubmitRow: "chtr-subform-submit-row",
     classNameFormDiv: "",
     classNameButton: "ChtrFormSubmit",
     classNameFormError: "chtr-form-error",
     submitText: "Add",
-    resetText: "Revert",
+    errorText: "Some fields are not filled out properly",
 };
 
 Object.assign( ChtFormContainerAdd.defaultFormProps, formCss );
 
 ChtFormContainerAdd.defaultProps = {
+    label: "",
     form: {},
     add: {},
     list: { canMove: true, canDelete: true },

@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { ChtFormElements  } from './chtr-form-elements.js';
+import { ChtFormElements } from './chtr-form-elements.js';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
 
-class ChtrFormTextInput extends React.Component {
+class ChtrFormPasswdInput extends React.Component {
 
     static buildData( props ) {
 
-        const input = props.hasOwnProperty( 'input' ) ? props.input : ChtrFormTextInput.defaultProps.input;
+        const input = props.hasOwnProperty( 'input' ) ? props.input : ChtrFormPasswdInput.defaultProps.input;
         return input == null ? "" : input;
     }
 
@@ -64,7 +64,7 @@ class ChtrFormTextInput extends React.Component {
                     value={this.state.input}
                     disabled={this.state.disabled}
                     className={this.state.classNameInputText}
-                    type="text"
+                    type="password"
                     onChange={this.handleChange}
                 />
             </div>
@@ -80,7 +80,7 @@ const css = {
     classNameInputTextDefault: "ChtrFormDefaultsInputText",
 };
 
-ChtrFormTextInput.defaultProps = {
+ChtrFormPasswdInput.defaultProps = {
     onChange: function( displayPath, dataPath, props ) { },
     input: "",
     name: 'default-input',
@@ -93,9 +93,9 @@ ChtrFormTextInput.defaultProps = {
 };
 
 
-ChtFormElements['text'] = ChtrFormTextInput;
+ChtFormElements['password'] = ChtrFormPasswdInput;
 
-Object.assign( ChtrFormTextInput.defaultProps, css );
+Object.assign( ChtrFormPasswdInput.defaultProps, css );
 
 
 // end of the package

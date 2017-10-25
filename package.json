@@ -1,49 +1,51 @@
 {
-  "name": "react-chtr-form",
-  "version": "1.0.25",
-  "description": "Chtr React Data Centric form generation library",
-  "main": "build/chtr-form.js",
-  "scripts": {
-    "test": "mocha --require babel-register ./test/test.jsx",
-    "build": "babel -s inline src --out-dir build/  --compact true --minified",
-    "watch": "babel --watch -s inline src --out-dir build/ ",
-    "prepublish": "npm run build && npm run test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@git.corp.chartercom.com:7999/itccc/react-chtr-form.git"
-  },
-  "keywords": [
-    "form",
-    "builder",
-    "formbuilder",
-    "forms",
-    "generation"
-  ],
-  "files": [
-    "build/",
-    "chtr-form.css"
-  ],
-  "author": "Michael Shipper <Michael.Shipper@Charter.com>",
-  "license": "MIT",
-  "dependencies": {
-    "babel-loader": "^7.1.2",
-    "babel-plugin-minify-dead-code-elimination": "^0.2.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "1.x",
-    "babel-preset-react": "6.x",
-    "babel-register": "6.x",
-    "css-loader": "^0.x",
-    "mocha": "4.x",
-    "react": "16.x",
-    "react-chtr-object-methods": "^1.x",
-    "react-dom": "^16.x",
-    "style-loader": "^0.19.0",
-    "unit.js": "2.x",
-    "webpack": "^3.8.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0"
-  }
+	"name": "react-chtr-form",
+	"version": "1.0.25",
+	"description": "Chtr React Data Centric form generation library",
+	"main": "build/chtr-form.js",
+	"scripts": {
+		"test": "mocha --require babel-register ./test/test.jsx",
+		"build": "babel --source-maps inline src --out-dir build --minified --compact true --retain-lines",
+		"watch": "rm -f build/*.js build/*.map && babel --source-maps inline src --out-dir build --minified --compact true --retain-lines --watch",
+		"demo": "NODE_ENV=development webpack -d",
+		"prepublish": "npm run build && npm run test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@git.corp.chartercom.com:7999/itccc/react-chtr-form.git"
+	},
+	"keywords": [
+		"form",
+		"builder",
+		"formbuilder",
+		"forms",
+		"generation"
+	],
+	"files": [
+		"build/",
+		"chtr-form.css"
+	],
+	"author": "Michael Shipper <Michael.Shipper@Charter.com>",
+	"license": "MIT",
+	"dependencies": {
+		"react": "16.x",
+		"react-chtr-object-methods": "1.x",
+		"react-dom": "16.x"
+	},
+	"devDependencies": {
+		"babel-core": "6.x",
+		"babel-loader": "7.x",
+		"babel-plugin-minify-dead-code-elimination": "0.x",
+		"babel-plugin-transform-class-properties": "6.x",
+		"babel-plugin-transform-react-jsx": "6.x",
+		"babel-register": "6.x",
+		"css-loader": "0.x",
+		"babel-preset-env": "1.x",
+		"babel-preset-react": "6.x",
+		"style-loader": "0.x",
+		"babel-cli": "6.x",
+		"mocha": "4.x",
+		"unit.js": "2.x",
+		"webpack": "3.x"
+	}
 }

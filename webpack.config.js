@@ -2,11 +2,13 @@ var webpack = require('webpack');
 var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, 'demo');
 var APP_DIR = path.resolve(__dirname, '.');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 var config = {
 	entry : [  
-		BUILD_DIR + '/demo_src.jsx',
-		APP_DIR + '/chtr-form.css' 
+	         'babel-polyfill',
+		APP_DIR + '/chtr-form.css' ,
+		BUILD_DIR + '/demo_src.jsx'
 		],
 	    target : 'web',
 	    output : {
@@ -14,15 +16,16 @@ var config = {
 		  filename : 'site.js',
 		
 	},
-	devtool : '#inline-source-map',
+	devtool : '#eval-source-map',
 	module : {
 		loaders : [
 				{
 					test : /\.jsx?$/,
 					loader : "babel-loader",
+					    exclude: /node_modules/,
 					query : {
-						compact : true,
-						presets : [ [ 'react' ], [ 'env', {} ], ],
+					    compact : false,
+						presets : [ [ 'react' ], ['env',{}] ],
 						plugins : [ "babel-plugin-transform-react-jsx",
 								"transform-class-properties" ]
 				
@@ -39,15 +42,13 @@ var config = {
 					}
 				}, ],
 	},
-	plugins : [new webpack.optimize.UglifyJsPlugin({
-		  sourceMap : true,
-		  warnings : true,
-		  uglifyOptions : {
-			compress : {
-				dead_code : true,
-			},
-		},
-	})],
+	plugins : [
+	           new webpack.optimize.UglifyJsPlugin({
+        sourceMap : true,
+        warnings : true,
+        uglifyOptions : { },
+  })
+	],
 };
 
 module.exports = config;

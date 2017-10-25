@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component, PropTypes } from 'react';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
-import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.js';
+import { ChtFormElements} from './chtr-form-elements.js';
 
 
 class ChtrList extends React.Component {
@@ -101,7 +101,6 @@ const css = {
     classNameListHeader: "chtr-form-container-list-header",
 };
 
-Object.assign( ChtrFormCss, css );
 ChtrList.defaultProps = {
     displayPath: [],
     dataPath: [],

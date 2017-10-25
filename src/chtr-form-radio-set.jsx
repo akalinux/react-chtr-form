@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ChtFormElements, ChtrFormCss } from './chtr-form-elements.js';
+import { ChtFormElements } from './chtr-form-elements.js';
 import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
 
 
@@ -119,8 +119,6 @@ const css={
         classNameRadioButtonCellDefault: 'chtr-form-radio-button-cell',
         classNameRadioButtonCellFailed: 'chtr-form-radio-button-cell-failed',
 };
-
-Object.assign(ChtFormElements,css);
 
 ChtrFormRaidioSet.defaultProps = {
     handleUpdate: function( state ) { },
