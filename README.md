@@ -36,13 +36,15 @@ Paths are a list that represent where in the object structure this thing exists.
 
 # Getting Data out
 
-`ChtrFrom~ provides a collection of callback handlers that return a semi deep copy of the the internal data.
+`ChtrFrom` provides a collection of callback handlers that return a semi deep copy of the the internal data.
 
 ## Callbacks
 
 | name | When its called | Arguments |
-| onChange | when a field changes | data,path |
-| onSubmit
+| ---- | --------------- | --------- |
+| onChange | when a field changes | (data,path) |
+| onSubmit | when the submit button is pressed | (data) |
+| onReset  | when the reset button is pressed  | () |
 
 
 
