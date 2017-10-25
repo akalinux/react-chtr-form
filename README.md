@@ -414,6 +414,7 @@ This example shows how to manage a list of text inputs.
     }]
     }}
 />
+```
 
 ### hash
 
