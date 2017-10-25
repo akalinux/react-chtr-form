@@ -69,7 +69,13 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 
 ## Input Examples
 
-### Select box
+### input text box
+
+### password
+
+### textarea
+
+### Select box ( select plugin )
 
 * **Example**
 
@@ -118,13 +124,6 @@ The select plugin has the following css options
 | classNameSelectOption | chtr-form-select-option  | 
 | classNameSelectOptionDefault | chtr-form-select-option  | 
 | classNameSelectOptionError | chtr-form-select-option-error |
-
-
-### input text box
-
-### password
-
-### textarea
 
 ### multiselect
 
