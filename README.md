@@ -38,6 +38,7 @@ Paths are a list that represent where in the object structure this thing exists.
 
 `ChtrFrom` provides a collection of callback handlers that return a semi deep copy of the the internal data.
 
+
 ## Callbacks
 
 | name | When its called | Arguments |
@@ -66,11 +67,11 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 | list        | container for lists  |
 | watch       | chooses a container based on an item being watched |
 
-# Input Examples
+## Input Examples
 
-## Select box
+### Select box
 
-* Example
+* **Example**
 
 This example shows how to manage a scalar value with a select box.
 
@@ -90,7 +91,7 @@ This example shows how to manage a scalar value with a select box.
 }/>
 ```
 
-* Options
+* **Options**
 
 | option | description |
 | ------ | ----------- |
@@ -100,7 +101,7 @@ This example shows how to manage a scalar value with a select box.
 | label | display text |
 | disabled | true|false, denotes if this field is disabled |
 
-* Css Options
+* **CSS Options**
 
 The select plugin has the following css options
 
@@ -119,24 +120,24 @@ The select plugin has the following css options
 | classNameSelectOptionError | chtr-form-select-option-error |
 
 
-## input text box
+### input text box
 
-## password
+### password
 
-## textarea
+### textarea
 
-## multiselect
+### multiselect
 
-## radio
+### radio
 
-## checbox
+### checbox
 
-# Container Examples
+## Container Examples
 
-## list
+### list
 
-## hash
+### hash
 
-## add
+### add
 
 # Watch example(s)
