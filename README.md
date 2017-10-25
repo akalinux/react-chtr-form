@@ -105,7 +105,7 @@ The select plugin has the following css options
 
 | option | default value |
 | ------ | ------------- |
-| classNameSelectRow: "ChtrFormSelectRow",
+| classNameSelectRow | ChtrFormSelectRow |
 | classNameSelectHeader | ChtrFormSelectHeader  | 
 | classNameSelectCell | chtr-form-select-cell  | 
 | classNameSelectCellDefault | chtr-form-select-cell  | 
