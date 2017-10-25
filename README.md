@@ -468,12 +468,13 @@ This example shows how to manage a hash of text and password inputs.
 
 | option | description |
 | ------ | ----------- |
+| display | Array that contains the plugins options to display |
 
 * **CSS Options**
 
 | option | default value |
 | ------ | ------------- |    
-| display | Array that contains the plugins options to display |
+
 |    classNameListContainer | chtr-form-container | 
 |    classNameHashRow | chtr-form-container-hash-row | 
 |    classNameHashCell | chtr-form-container-hash-cell | 
@@ -481,11 +482,64 @@ This example shows how to manage a hash of text and password inputs.
 
 ### add
 
+```
+<ChtrForm display={{
+        label: "Add to list",
+        display: {
+            type: 'add',
+            add: ['forms'],
+            form: {
+                display: {
+                    type: 'hash', display: [
+                        { name: 'label', type: 'text', label: "label", required: true },
+                        { name: 'value', type: 'text', label: "value", required: true },
+                        {
+                            name: 'forms', 
+                            type: 'select', 
+                            label: "Choose the subform", 
+                            data: [
+                              { value: 'Informal', label: 'informal' }, 
+                              { value: 'Formal', label: 'formal' }
+                            ]
+                        }
+                    ]
+                }
+            },
+            list: {
+                canMove: true,
+                canDelete: true,
+                label: 'sets added', display: [],
+            },
+            chooser: {
+                Informal: {
+                    label: 'Form One',
+                    type: 'hash',
+                    display: [
+                        { name: 'label', type: 'text', label: "label", required: true },
+                        { name: 'value', type: 'text', label: "value", required: true },
+                    ]
+                },
+                Formal: {
+                    label: 'Form Two',
+                    type: 'hash',
+                    display: [
+                        { name: 'label', type: 'text', label: "Nomenclature", required: true },
+                        { name: 'value', type: 'text', label: "Assignment", required: true },
+                        { name: 'select', type: 'select', label: 'Choose One', required: true, data: [{ label: 'one', value: 'one' }, { label: 'two', value: 'two' }] }
+                    ]
+                }
+            },
+
+        }
+    }}
+/>
+```
+
 ## Watch example(s)
 
 # Built in demo
 
-The project contains a very basic demo which can be accessed by by issuing the following commands, in the project folder.
+The project contains a very basic demo which can be accessed by by issuing the following command, in the project folder.
 
 ```
 npm run demo
