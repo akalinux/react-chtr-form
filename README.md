@@ -39,7 +39,16 @@ Paths are a list that represent where in the object structure this thing exists.
 `ChtrFrom` provides a collection of callback handlers that return a semi deep copy of the the internal data.
 
 
-## Callbacks
+## ChtrForm Options
+
+* **Arguments**
+
+| option | description |
+| ------ | ----------- |
+| data | data structure to be displayed |
+| display | form/data structure configuration |
+
+* **Event Handlers**
 
 | name | When its called | Arguments |
 | ---- | --------------- | --------- |
@@ -47,6 +56,19 @@ Paths are a list that represent where in the object structure this thing exists.
 | onSubmit | when the submit button is pressed | (data) |
 | onReset  | when the reset button is pressed  | () |
 
+* **Css Options**
+
+ChtrForm uses the following CSS Classes, and each class can be passed in as an argument.
+
+| option | default value |
+| ------ | ------------- |
+|    classNameFormContainer | chtr-form-container |
+|    classNameFormHeader | chtr-form-header |
+|    classNameHeaderLine | |
+|    classNameSubmitRow | chtr-form-submit-row |
+|    classNameFormDiv |  |
+|    classNameButton | ChtrFormSubmit |
+|    classNameFormError | chtr-form-error |
 
 
 # Plugins
@@ -69,7 +91,7 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 
 ## Input Examples
 
-### input text box
+### input text box ( text plugin )
 
 * **Options**
 
