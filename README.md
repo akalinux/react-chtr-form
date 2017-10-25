@@ -71,6 +71,16 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 
 ### input text box
 
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| input  | default value |
+| required | true|false determines if this field is required |
+| validate | function(currentValue), must return true if the value is valid false if it is not |
+| disabled | true|false determines if the field is disabled |
+
+* **CSS Options**
 | option | default value |
 | ------ | ------------- |
 |    classNameInputText | ChtrFormDefaultsInputText |
