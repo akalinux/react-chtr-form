@@ -47,13 +47,13 @@ Objects are typically displayed in containers; Containers represent data structu
 | ------ | ----------- |
 | data | data structure to be displayed |
 | display | form/data structure configuration |
-|    showSubmit | true |
-|    showReset | true |
-|    submitText | default "Submit" |
-|    resetText | default "Rest" |
-|    formError | false |
-|    name | default "form" |
-|    label | default "" |
+|    showSubmit | default: true, show or hide the submit button |
+|    showReset | default: true, show or hide the reset button |
+|    submitText | default "Submit", submit button text |
+|    resetText | default "Rest", submit button reset |
+|    formError | default: false, State for the form ( error: true\|false ) |
+|    name | default "form", used for internal key geneation ( recommended this be set to something unique ) |
+|    label | default "", header text of the form |
 |    errorText | default "Some fields are not filled out properly" |
 
 * **Event Handlers**
