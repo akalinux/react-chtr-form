@@ -416,6 +416,30 @@ This example shows how to manage a list of text inputs.
 />
 ```
 
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+|    deleteText | default "Delete", text of the delete button |
+|    moveUpText | default value "^", text of the move up button |
+|    moveDownText | default value "v", text of the move down button |
+|    canMove | false, enables or disables the move option  |
+|    canDelete | false, enables or disables the delete option |
+|    headerText | default "I am a list", sets the header text for the list block |
+
+* **CSS Options**
+
+| option | default value |
+| ------ | ------------- |    
+|    classNameListContainer | chtr-form-container |
+|    classNameListRow | chtr-form-container-list-row |
+|    classNameListButton | ChtrFormSubmit |
+|    classNameListCell | chtr-form-container-list-cell |
+|    classNameListButtonContainer | chtr-form-container-list-cell-buttons |
+|    classNameHidden | ChtrFormHidden |
+|    classNameSmallerWidth | chtr-form-container-smaller-row |
+|    classNameListHeader | chtr-form-container-list-header |
+
 ### hash
 
 ### add
