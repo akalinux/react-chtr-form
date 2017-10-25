@@ -71,7 +71,7 @@ ChtrForm uses the following CSS Classes, and each class can be passed in as an a
 |    classNameFormError | chtr-form-error |
 
 
-# Plugins
+# Default Plugins
 
 Each plugin has its on css, and each css class can be passed in as an argument.
 
@@ -250,7 +250,7 @@ The select plugin has the following css options
 | classNameSelectOptionDefault | chtr-form-select-option  | 
 | classNameSelectOptionError | chtr-form-select-option-error |
 
-### radio
+### Radio Set ( radio plugin )
 
 * **Example**
 
@@ -294,8 +294,52 @@ This example shows how to manage a scalar value with a radio set.
 |        classNameRadioButtonCellDefault | chtr-form-radio-button-cell |
 |        classNameRadioButtonCellFailed | chtr-form-radio-button-cell-failed |
 
-### multiselect
+### Multiple Select ( multiselect plugin )
 
+* **Example**
+
+This example shows how to manage a scalar value with a multiple select.
+
+```
+<ChtrForm display={
+  { 
+    type: 'multiselect', 
+    input: [], 
+    required: true, 
+    label: "Select Test", 
+    data: [
+      { value: "one", label: "Option one" }, 
+      { value: 'two', label: "Option two" }
+    ] 
+  }
+}/>
+```
+
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| data | Array of Objects: { value: "value", label: "display text } |
+| input | Array of selected values, [] if you don't want anything selected |
+| required | true\|false, denotes if the field is required for the onSubmit action to be called |
+| label | display text |
+| disabled | true\|false, denotes if this field is disabled |
+| size| default: 5, sets how many records will be shown |
+
+* **CSS Options**
+
+| option | default value |
+| ------ | ------------- |
+|    classNameSelectRow | ChtrFormSelectRow |
+|    classNameSelectHeader | ChtrFormSelectHeader |
+|    classNameSelectCell | chtr-form-select-cell |
+|    classNameSelectCellDefault | chtr-form-select-cell |
+|    classNameSelectCellError | chtr-form-select-cell-error |
+|    classNameSelect | chtr-form-select-multi |
+|    classNameSelectOption | chtr-form-select-option |
+|    classNameSelectOptionDefault | chtr-form-select-option |
+|    classNameSelectOptionError | chtr-form-select-option-error |
+    
 ### checbox
 
 ## Container Examples
