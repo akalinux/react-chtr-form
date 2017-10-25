@@ -87,7 +87,7 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 | add         | subform add          |
 | hash        | container for hashes |
 | list        | container for lists  |
-| watch       | chooses a container based on an item being watched |
+| watch       | chooses a configuration based on an item being watched |
 
 ## Input Examples
 
@@ -250,9 +250,51 @@ The select plugin has the following css options
 | classNameSelectOptionDefault | chtr-form-select-option  | 
 | classNameSelectOptionError | chtr-form-select-option-error |
 
-### multiselect
-
 ### radio
+
+* **Example**
+
+This example shows how to manage a scalar value with a radio set.
+
+```
+<ChtrForm display={
+  { 
+    type: 'radio', 
+    input: "", 
+    required: true, 
+    label: "Select Test", 
+    data: [
+      { value: "one", label: "Option one" }, 
+      { value: 'two', label: "Option two" }
+    ] 
+  }
+}/>
+```
+
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| data | Array of Objects: { value: "value", label: "display text } |
+| input | The default selected value "" if you don't want anything selected |
+| required | true\|false, denotes if the field is required for the onSubmit action to be called |
+| label | display text |
+| disabled | true\|false, denotes if this field is disabled |
+
+* **CSS Options**
+
+| option | default value |
+| ------ | ------------- |
+|        classNameInputRaidio | ChtrFormDefaultsInputRaidio |
+|        classNameRadioCellIndent | chtr-form-radio-indent |
+|        classNameRadioHeader | ChtrFormRadioHeader |
+|        classNameRaidoRow | chtr-form-raidio-row |
+|        classNameRaidioRowContainer | chtr-form-raidio-row-container |
+|        classNameRadioButtonCell | chtr-form-radio-button-cell |
+|        classNameRadioButtonCellDefault | chtr-form-radio-button-cell |
+|        classNameRadioButtonCellFailed | chtr-form-radio-button-cell-failed |
+
+### multiselect
 
 ### checbox
 
@@ -268,7 +310,7 @@ The select plugin has the following css options
 
 # Built in demo
 
-The project contains a very basic demo which can be accessed by by issuing the following commands, in the project checkout folder.
+The project contains a very basic demo which can be accessed by by issuing the following commands, in the project folder.
 
 ```
 npm run demo
