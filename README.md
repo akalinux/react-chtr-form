@@ -378,10 +378,10 @@ This example shows how to manage a scalar value with a multiple select.
 | ------ | ------------- |
 |    classNameFormCheckboxLeft | chtr-form-label-right |
 |    classNameFormCheckboxRight | chtr-form-element-left |
-|    classNameFormCheckboxContainer: 'chter-form-input-container',
-|    classNameFormCheckBox: 'chtr-form-input-checkbox',
-|    classNameFormCheckBoxDefault: 'chtr-form-input-checkbox',
-|    classNameFormCheckBoxError: 'chtr-form-input-checkbox-error',
+|    classNameFormCheckboxContainer | chter-form-input-container |
+|    classNameFormCheckBox | chtr-form-input-checkbox |
+|    classNameFormCheckBoxDefault | chtr-form-input-checkbox |
+|    classNameFormCheckBoxError | chtr-form-input-checkbox-error |
 |    classNameFormCheckboxRightError | chtr-form-label-right-error |
 |    classNameFormCheckBoxRightDefault | chtr-form-label-right |
 
