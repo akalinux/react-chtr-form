@@ -81,6 +81,7 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 | disabled | true|false determines if the field is disabled |
 
 * **CSS Options**
+
 | option | default value |
 | ------ | ------------- |
 |    classNameInputText | ChtrFormDefaultsInputText |
