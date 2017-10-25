@@ -93,6 +93,21 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 
 ### input text box ( text plugin )
 
+* **Example**
+
+This example shows how to manage a scalar value with a text input.
+
+```
+<ChtrForm display={
+  { 
+    type: 'select', 
+    input: "", 
+    required: true, 
+    label: "input test", 
+  }
+}/>
+```
+
 * **Options**
 
 | option | description |
@@ -147,8 +162,7 @@ This example shows how to manage a scalar value with a select box.
     type: 'select', 
     input: "", 
     required: true, 
-    label: 
-    "Select Test", 
+    label: "Select Test", 
     data: [
       { value: "one", label: "Option one" }, 
       { value: 'two', label: "Option two" }
@@ -163,9 +177,9 @@ This example shows how to manage a scalar value with a select box.
 | ------ | ----------- |
 | data | Array of Objects: { value: "value", label: "display text } |
 | input | The default selected value "" if you don't want anything selected |
-| required | true|false, denotes if the field is required for the onSubmit action to be called |
+| required | true\|false, denotes if the field is required for the onSubmit action to be called |
 | label | display text |
-| disabled | true|false, denotes if this field is disabled |
+| disabled | true\|false, denotes if this field is disabled |
 
 * **CSS Options**
 

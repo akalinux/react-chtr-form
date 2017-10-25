@@ -29,22 +29,22 @@
 	"license": "MIT",
 	"dependencies": {
 		"react": "16.x",
-		"react-chtr-object-methods": "1.x",
+		"react-chtr-object-methods": "^1.0.5",
 		"react-dom": "16.x"
 	},
 	"devDependencies": {
+		"babel-cli": "6.x",
 		"babel-core": "6.x",
 		"babel-loader": "7.x",
 		"babel-plugin-minify-dead-code-elimination": "0.x",
 		"babel-plugin-transform-class-properties": "6.x",
 		"babel-plugin-transform-react-jsx": "6.x",
-		"babel-register": "6.x",
-		"css-loader": "0.x",
 		"babel-preset-env": "1.x",
 		"babel-preset-react": "6.x",
-		"style-loader": "0.x",
-		"babel-cli": "6.x",
+		"babel-register": "6.x",
+		"css-loader": "0.x",
 		"mocha": "4.x",
+		"style-loader": "0.x",
 		"unit.js": "2.x",
 		"webpack": "3.x"
 	}
