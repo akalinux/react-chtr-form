@@ -470,6 +470,7 @@ This example shows how to manage a hash of text and password inputs.
 | ------ | ----------- |
 
 * **CSS Options**
+
 | option | default value |
 | ------ | ------------- |    
 | display | Array that contains the plugins options to display |
