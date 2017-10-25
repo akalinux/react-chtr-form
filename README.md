@@ -426,6 +426,9 @@ This example shows how to manage a list of text inputs.
 |    canMove | false, enables or disables the move option  |
 |    canDelete | false, enables or disables the delete option |
 |    headerText | default "I am a list", sets the header text for the list block |
+| display | Array that contains the plugins options to display |
+
+
 
 * **CSS Options**
 
@@ -441,6 +444,33 @@ This example shows how to manage a list of text inputs.
 |    classNameListHeader | chtr-form-container-list-header |
 
 ### hash
+
+* **Example**
+
+This example shows how to manage a hash of text and password inputs. 
+
+```
+<ChtrForm display={{
+        label: "Simple Hash example",
+        display: {
+            type: 'hash',
+            display: [
+                { type: 'text', label: 'Email Address', name: "email", required: true },
+                { type: 'password', label: "password", name: "password", required: true }
+            ]
+        }
+    }}
+/>
+```
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| display | Array that contains the plugins options to display |
+|    classNameListContainer | chtr-form-container | 
+|    classNameHashRow | chtr-form-container-hash-row | 
+|    classNameHashCell | chtr-form-container-hash-cell | 
+|    classNameListHeader | chtr-form-container-list-header | 
 
 ### add
 
