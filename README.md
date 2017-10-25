@@ -47,6 +47,14 @@ Objects are typically displayed in containers; Containers represent data structu
 | ------ | ----------- |
 | data | data structure to be displayed |
 | display | form/data structure configuration |
+|    showSubmit | true |
+|    showReset | true |
+|    submitText | default "Submit" |
+|    resetText | default "Rest" |
+|    formError | false |
+|    name | default "form" |
+|    label | default "" |
+|    errorText | default "Some fields are not filled out properly" |
 
 * **Event Handlers**
 
@@ -262,7 +270,7 @@ This example shows how to manage a scalar value with a radio set.
     type: 'radio', 
     input: "", 
     required: true, 
-    label: "Select Test", 
+    label: "Raidio Test", 
     data: [
       { value: "one", label: "Option one" }, 
       { value: 'two', label: "Option two" }
@@ -306,7 +314,7 @@ This example shows how to manage a scalar value with a multiple select.
     type: 'multiselect', 
     input: [], 
     required: true, 
-    label: "Select Test", 
+    label: "Milti Select Test", 
     data: [
       { value: "one", label: "Option one" }, 
       { value: 'two', label: "Option two" }
@@ -340,17 +348,78 @@ This example shows how to manage a scalar value with a multiple select.
 |    classNameSelectOptionDefault | chtr-form-select-option |
 |    classNameSelectOptionError | chtr-form-select-option-error |
     
-### checbox
+### CheckBox ( checbox plugin )
+
+* **Example**
+
+This example shows how to manage a scalar value with a multiple select.
+
+```
+<ChtrForm display={
+  { 
+    type: 'checkbox', 
+    label: "Label Example", 
+  }
+}/>
+```
+
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| input | true\|false, if not set defaults to false |
+| required | true\|false, denotes if the field is required for the onSubmit action to be called |
+| label | display text |
+| disabled | true\|false, denotes if this field is disabled |
+
+* **CSS Options**
+
+| option | default value |
+| ------ | ------------- |
+|    classNameFormCheckboxLeft | chtr-form-label-right |
+|    classNameFormCheckboxRight | chtr-form-element-left |
+|    classNameFormCheckboxContainer: 'chter-form-input-container',
+|    classNameFormCheckBox: 'chtr-form-input-checkbox',
+|    classNameFormCheckBoxDefault: 'chtr-form-input-checkbox',
+|    classNameFormCheckBoxError: 'chtr-form-input-checkbox-error',
+|    classNameFormCheckboxRightError | chtr-form-label-right-error |
+|    classNameFormCheckBoxRightDefault | chtr-form-label-right |
 
 ## Container Examples
 
-### list
+Containers represent Data structures of type Array or Object.  Containers make it possible to move beyond a scalar value.
+
+### list ( list plugin )
+
+* **Example**
+
+This example shows how to manage a list of text inputs.
+
+```
+<ChtrForm display={{
+  "type": "list",
+  "label": "Test Set 1",
+  "canMove": true,
+  "canDelete": true,
+  "display": [
+    {
+      "type": "text",
+      "label": "test One",
+      "required": true
+    },
+    {
+      "type": "text",
+      "label": "Test Two",
+      "required": true
+    }]
+    }}
+/>
 
 ### hash
 
 ### add
 
-# Watch example(s)
+## Watch example(s)
 
 # Built in demo
 
