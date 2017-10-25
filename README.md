@@ -479,7 +479,11 @@ This example shows how to manage a hash of text and password inputs.
 |    classNameHashCell | chtr-form-container-hash-cell | 
 |    classNameListHeader | chtr-form-container-list-header | 
 
-### add
+### Add Elements ( add plugin )
+
+* **Example**
+
+The following is an example of how to use the add plugin.  
 
 ```
 <ChtrForm display={{
@@ -507,7 +511,8 @@ This example shows how to manage a hash of text and password inputs.
         list: {
             canMove: true,
             canDelete: true,
-            label: 'sets added', display: [],
+            label: 'sets added', 
+            display: [],
         },
         chooser: {
             Informal: {
@@ -534,6 +539,31 @@ This example shows how to manage a hash of text and password inputs.
     }}
 />
 ```
+
+
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| display | Array that contains the plugins options to display |
+| add | Array, path representing the current most display container element to watch |
+| list | all objects added exist in a "list" plugion object, this is where those options are set |
+| chooser | Object, of display Objects, when a user clicks the add button, the option matching the chooser will be used |
+| submitText | default "Add", the submit button text |
+| errorText | default "Some fields are not filled out properly", error show when validation fails |
+
+
+* **CSS Options**
+
+| option | default value |
+| ------ | ------------- |   
+|    classNameFormContainer | chtr-form-container |
+|    classNameFormHeader | chtr-subform-header |
+|    classNameHeaderLine |  |
+|    classNameSubmitRow | chtr-subform-submit-row |
+|    classNameFormDiv |  |
+|    classNameButton | ChtrFormSubmit |
+|    classNameFormError | chtr-form-error |
 
 ## Watch example(s)
 
