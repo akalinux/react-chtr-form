@@ -64,9 +64,9 @@ ChtrForm uses the following CSS Classes, and each class can be passed in as an a
 | ------ | ------------- |
 |    classNameFormContainer | chtr-form-container |
 |    classNameFormHeader | chtr-form-header |
-|    classNameHeaderLine | |
+|    classNameHeaderLine | "" |
 |    classNameSubmitRow | chtr-form-submit-row |
-|    classNameFormDiv |  |
+|    classNameFormDiv | "" |
 |    classNameButton | ChtrFormSubmit |
 |    classNameFormError | chtr-form-error |
 
@@ -112,7 +112,26 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 |    classNameInputContainer | chtr-form-input-container |
 |    classNameInputTextDefault | ChtrFormDefaultsInputText |
 
-### password
+
+### Password ( password plugin )
+
+* **Options**
+| option | description |
+| ------ | ----------- |
+| input  | default value |
+| required | true\|false determines if this field is required |
+| validate | function(currentValue), must return true if the value is valid false if it is not |
+| disabled | true\|false determines if the field is disabled |
+
+* **CSS Options**
+
+| option | default value |
+| ------ | ------------- |
+|    classNameInputText | ChtrFormDefaultsInputText |
+|    classNameInputTextCheckFailed | ChtrFormDefaultsInputTextfailed |
+|    classNameInputLabel | ChtrFormLabel |
+|    classNameInputContainer | chtr-form-input-container |
+|    classNameInputTextDefault | ChtrFormDefaultsInputText |
 
 ### textarea
 
