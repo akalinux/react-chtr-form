@@ -26,7 +26,7 @@ render( <ChtrForm  label="I am a form!"
 
 `react-chtr-form` was created to manage complex data structures.  A single configuration is used to describe both the data structure and the form.  The configuration is designed have a minimal feel/code footprint, with the ability to tune or change almost anything.  The idea is to be able to create an manage an infinitly scaling form/data structure that is only limited by browser resoruces.
 
-Objects are typically displayed in containers; Containers represent data structures.  Example: if you want the form to manage a list ( Array Object ) the first container would be a `type: list`,  and the display contents would then represent list elements.
+Objects are typically displayed in containers; Containers represent data structures.  Example: if you want the form to manage a list ( Array Object ) the first container would be a `type: list`,  and the display contents would then represent list elements. 
 
 
 # Terms
@@ -68,7 +68,7 @@ Paths are a list that represent where in the object structure this thing exists.
 
 ## Select box
 
-
+1. Example
 This example shows how to manage a scalar value with a select box.
 
 ```
@@ -86,6 +86,13 @@ This example shows how to manage a scalar value with a select box.
   }
 }/>
 ```
+
+2. Options
+
+| option | description |
+| ------ | ----------- |
+| data | an Array of Objects: { value: "value", label: "display text } |
+
 
 ## input text box
 
