@@ -503,30 +503,31 @@ This example shows how to manage a hash of text and password inputs.
                         }
                     ]
                 }
+        },
+        list: {
+            canMove: true,
+            canDelete: true,
+            label: 'sets added', display: [],
+        },
+        chooser: {
+            Informal: {
+                label: 'Form One',
+                type: 'hash',
+                display: [
+                    { name: 'label', type: 'text', label: "label", required: true },
+                    { name: 'value', type: 'text', label: "value", required: true },
+                ]
             },
-            list: {
-                canMove: true,
-                canDelete: true,
-                label: 'sets added', display: [],
-            },
-            chooser: {
-                Informal: {
-                    label: 'Form One',
-                    type: 'hash',
-                    display: [
-                        { name: 'label', type: 'text', label: "label", required: true },
-                        { name: 'value', type: 'text', label: "value", required: true },
+            Formal: {
+              label: 'Form Two',
+              type: 'hash',
+              display: [
+                  { name: 'label', type: 'text', label: "Nomenclature", required: true },
+                  { name: 'value', type: 'text', label: "Assignment", required: true },
+                  { name: 'select', type: 'select', label: 'Choose One', required: true, 
+                    data: [{ label: 'one', value: 'one' }, { label: 'two', value: 'two' }] }
                     ]
-                },
-                Formal: {
-                    label: 'Form Two',
-                    type: 'hash',
-                    display: [
-                        { name: 'label', type: 'text', label: "Nomenclature", required: true },
-                        { name: 'value', type: 'text', label: "Assignment", required: true },
-                        { name: 'select', type: 'select', label: 'Choose One', required: true, data: [{ label: 'one', value: 'one' }, { label: 'two', value: 'two' }] }
-                    ]
-                }
+              }
             },
 
         }
