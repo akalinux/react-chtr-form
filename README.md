@@ -474,7 +474,6 @@ This example shows how to manage a hash of text and password inputs.
 
 | option | default value |
 | ------ | ------------- |    
-
 |    classNameListContainer | chtr-form-container | 
 |    classNameHashRow | chtr-form-container-hash-row | 
 |    classNameHashCell | chtr-form-container-hash-cell | 
