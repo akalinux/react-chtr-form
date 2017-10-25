@@ -31,8 +31,8 @@ Objects are typically displayed in containers; Containers represent data structu
 
 # Terms
 
-* path
-Paths are a list that represent where in the object structure this thing exists.
+* **path** Path(s) are a list that represent where in the object structure this thing exists.
+* **scalar** primitive data value
 
 # Getting Data out
 
@@ -164,7 +164,42 @@ This example shows how to manage a scalar value with a text input.
 |    classNameInputContainer | chtr-form-input-container |
 |    classNameInputTextDefault | ChtrFormDefaultsInputText |
 
-### textarea
+### Textarea ( textarea plugin )
+
+* **Example**
+
+This example shows how to manage a scalar value with a textarea.
+
+```
+<ChtrForm display={
+  { 
+    type: 'textarea', 
+    input: "", 
+    required: true, 
+    label: "password test", 
+  }
+}/>
+```
+
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| input  | default value |
+| required | true\|false determines if this field is required |
+| validate | function(currentValue), must return true if the value is valid false if it is not |
+| disabled | true\|false determines if the field is disabled |
+
+* **CSS Options**
+
+| option | default value |
+| ------ | ------------- |
+|    classNameInputText | ChtrFormDefaultsInputText |
+|    classNameInputTextCheckFailed | ChtrFormDefaultsInputTextfailed |
+|    classNameInputLabel | ChtrFormLabel |
+|    classNameInputContainer | chtr-form-input-container |
+|    classNameInputTextDefault | ChtrFormDefaultsInputText |
+
 
 ### Select box ( select plugin )
 
