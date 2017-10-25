@@ -71,6 +71,7 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 ## Select box
 
 * Example
+
 This example shows how to manage a scalar value with a select box.
 
 ```
