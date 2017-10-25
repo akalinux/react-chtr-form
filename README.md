@@ -71,6 +71,14 @@ Each plugin has its on css, and each css class can be passed in as an argument.
 
 ### input text box
 
+| option | default value |
+| ------ | ------------- |
+|    classNameInputText | ChtrFormDefaultsInputText |
+|    classNameInputTextCheckFailed | ChtrFormDefaultsInputTextfailed |
+|    classNameInputLabel | ChtrFormLabel |
+|    classNameInputContainer | chtr-form-input-container |
+|    classNameInputTextDefault | ChtrFormDefaultsInputText |
+
 ### password
 
 ### textarea
@@ -140,3 +148,13 @@ The select plugin has the following css options
 ### add
 
 # Watch example(s)
+
+# Built in demo
+
+The project contains a very basic demo which can be accessed by by issuing the following commands, in the project checkout folder.
+
+```
+npm run demo
+```
+
+From there the demo/index.html can be viewed locally.
