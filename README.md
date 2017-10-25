@@ -99,7 +99,7 @@ This example shows how to manage a scalar value with a select box.
 | label | display text |
 | disabled | true|false, denotes if this field is disabled |
 
-3. Css Options
+* Css Options
 
 The select plugin has the following css options
 
