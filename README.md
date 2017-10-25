@@ -50,6 +50,8 @@ Paths are a list that represent where in the object structure this thing exists.
 
 # Plugins
 
+Each plugin has its on css, and each css class can be passed in as an argument.
+
 | Plugin      |       Type           |
 | ----------- | -------------------- |
 | text        | input                |
@@ -68,7 +70,7 @@ Paths are a list that represent where in the object structure this thing exists.
 
 ## Select box
 
-1. Example
+* Example
 This example shows how to manage a scalar value with a select box.
 
 ```
@@ -87,11 +89,33 @@ This example shows how to manage a scalar value with a select box.
 }/>
 ```
 
-2. Options
+* Options
 
 | option | description |
 | ------ | ----------- |
-| data | an Array of Objects: { value: "value", label: "display text } |
+| data | Array of Objects: { value: "value", label: "display text } |
+| input | The default selected value "" if you don't want anything selected |
+| required | true|false, denotes if the field is required for the onSubmit action to be called |
+| label | display text |
+| disabled | true|false, denotes if this field is disabled |
+
+3. Css Options
+
+The select plugin has the following css options
+
+| option | default value |
+| ------ | ------------- |
+| classNameSelectRow: "ChtrFormSelectRow",
+| classNameSelectHeader | ChtrFormSelectHeader  | 
+| classNameSelectCell | chtr-form-select-cell  | 
+| classNameSelectCellDefault | chtr-form-select-cell  | 
+| classNameSelectCellError | chtr-form-select-cell-error  | 
+| classNameSelect | ChtrFormSelect  | 
+| classNameSelectDefault | ChtrFormSelect  | 
+| classNameSelectError | ChtrFormSelectError  | 
+| classNameSelectOption | chtr-form-select-option  | 
+| classNameSelectOptionDefault | chtr-form-select-option  | 
+| classNameSelectOptionError | chtr-form-select-option-error |
 
 
 ## input text box
