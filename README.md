@@ -1,13 +1,13 @@
 # React data form builder
 
-## to install
+## Install
 
 ```
 yarn add react-chtr-form
 ```
 
 
-## to use
+## Basic use case
 
 ```
 import { ChtrForm } from 'react-chtr-form';
@@ -25,5 +25,22 @@ render( <ChtrForm  label="I am a form!"
 
 # Mindset
 
-`react-chtr-form` was created to manage complex data structures.  The package itself does not actually create forms, it simply manages data structures.
+`react-chtr-form` was created to manage complex data structures.  A single configuration is used to describe both the data structure and the form.  The configuration is designed to be minimal feel/code, with the ability to tune or change almost anything.
+
+
+# Plugins
+
+| Plugin      |       Type           |
+| ----------- | -------------------- |
+| text        | input                |
+| password    | password             |
+| textarea    | textarea             |
+| select      | select               |
+| multiselect | select multiple      |
+| radio       | radio                |
+| checkbox    | checkbox             |
+| add         | subform add          |
+| hash        | container for hashes |
+| list        | container for lists  |
+| watch       | chooses a container based on an item being watched |
 
