@@ -6,7 +6,6 @@
 yarn add react-chtr-form
 ```
 
-
 ## Basic use case
 
 ```
@@ -25,7 +24,26 @@ render( <ChtrForm  label="I am a form!"
 
 # Mindset
 
-`react-chtr-form` was created to manage complex data structures.  A single configuration is used to describe both the data structure and the form.  The configuration is designed to be minimal feel/code, with the ability to tune or change almost anything.
+`react-chtr-form` was created to manage complex data structures.  A single configuration is used to describe both the data structure and the form.  The configuration is designed have a minimal feel/code footprint, with the ability to tune or change almost anything.  The idea is to be able to create an manage an infinitly scaling form/data structure that is only limited by browser resoruces.
+
+Objects are typically displayed in containers; Containers represent data structures.  Example: if you want the form to manage a list ( Array Object ) the first container would be a type: list.  The display contents would then represent list elements.
+
+
+# Terms
+
+* path
+Paths are a list that represent where in the object structure this thing exists.
+
+# Getting Data out
+
+`ChtrFrom~ provides a collection of callback handlers that return a semi deep copy of the the internal data.
+
+## Callbacks
+
+| name | When its called | Arguments |
+| onChange | when a field changes | data,path |
+| onSubmit
+
 
 
 # Plugins
@@ -44,3 +62,28 @@ render( <ChtrForm  label="I am a form!"
 | list        | container for lists  |
 | watch       | chooses a container based on an item being watched |
 
+# Input Examples
+
+## Select box
+
+## input text box
+
+## password
+
+## textarea
+
+## multiselect
+
+## radio
+
+## checbox
+
+# Container Examples
+
+## list
+
+## hash
+
+## add
+
+# Watch example(s)
