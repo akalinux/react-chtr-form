@@ -100,7 +100,7 @@ This example shows how to manage a scalar value with a text input.
 ```
 <ChtrForm display={
   { 
-    type: 'select', 
+    type: 'text', 
     input: "", 
     required: true, 
     label: "input test", 
@@ -130,7 +130,23 @@ This example shows how to manage a scalar value with a text input.
 
 ### Password ( password plugin )
 
+* **Example**
+
+This example shows how to manage a scalar value with a text input.
+
+```
+<ChtrForm display={
+  { 
+    type: 'password', 
+    input: "", 
+    required: true, 
+    label: "password test", 
+  }
+}/>
+```
+
 * **Options**
+
 | option | description |
 | ------ | ----------- |
 | input  | default value |
