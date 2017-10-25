@@ -72,7 +72,19 @@ Paths are a list that represent where in the object structure this thing exists.
 This example shows how to manage a scalar value with a select box.
 
 ```
-<ChtrForm display={{ type: 'select', input: "", required: true, label: "Select Test", data: [{ value: "one", label: "option one" }, { value: 'two', label: "Option two" }] }}/>
+<ChtrForm display={
+  { 
+    type: 'select', 
+    input: "", 
+    required: true, 
+    label: 
+    "Select Test", 
+    data: [
+      { value: "one", label: "Option one" }, 
+      { value: 'two', label: "Option two" }
+    ] 
+  }
+}/>
 ```
 
 ## input text box
