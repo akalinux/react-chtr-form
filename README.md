@@ -194,11 +194,11 @@ This example shows how to manage a scalar value with a textarea.
 
 | option | default value |
 | ------ | ------------- |
-|    classNameInputText | ChtrFormDefaultsInputText |
-|    classNameInputTextCheckFailed | ChtrFormDefaultsInputTextfailed |
-|    classNameInputLabel | ChtrFormLabel |
-|    classNameInputContainer | chtr-form-input-container |
-|    classNameInputTextDefault | ChtrFormDefaultsInputText |
+|    classNameInputText | chtr-form-textarea |
+|    classNameInputTextCheckFailed | chtr-form-textarea-error |
+|    classNameInputLabel | chtr-form-label |
+|    classNameInputContainer | chtr-form-textarea-container |
+|    classNameInputTextDefault | chtr-form-textarea-container |
 
 
 ### Select box ( select plugin )
