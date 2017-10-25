@@ -462,10 +462,16 @@ This example shows how to manage a hash of text and password inputs.
     }}
 />
 ```
+
+
 * **Options**
 
 | option | description |
 | ------ | ----------- |
+
+* **CSS Options**
+| option | default value |
+| ------ | ------------- |    
 | display | Array that contains the plugins options to display |
 |    classNameListContainer | chtr-form-container | 
 |    classNameHashRow | chtr-form-container-hash-row | 
