@@ -32,6 +32,8 @@ Objects are typically displayed in containers; Containers represent data structu
 # Terms
 
 * **path** Path(s) are a list that represent where in the object structure this thing exists.
+* **dataPath** An Array Object `path` that refers to an object that exists in ChtrForm this.state.data
+* **displayPath** An Array Object `path` that refers to an object that exists in ChtrForm this.state.display
 * **scalar** primitive data value
 
 
