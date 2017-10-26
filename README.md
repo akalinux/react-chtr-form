@@ -486,7 +486,40 @@ This example shows how to manage a hash of text and password inputs.
 
 ### Add Elements ( add plugin )
 
-* **Example**
+
+* **Basic Example**
+
+```
+<ChtrForm display={{
+        label: "Add to list",
+        display: {
+            type: 'add',
+            add: {
+            type: 'hash',
+            display: [
+              { name: 'label', type: 'text', label: "label", required: true },
+              { name: 'value', type: 'text', label: "value", required: true }
+            ]
+          },
+          form: {
+                display: {
+                    type: 'hash', display: [
+                      { name: 'label', type: 'text', label: "label", required: true },
+                      { name: 'value', type: 'text', label: "value", required: true }
+                    ]
+                }
+        },
+        list: {
+            canMove: true,
+            canDelete: true,
+            label: 'sets added', 
+            display: [],
+        }
+    }}
+/>
+```
+
+* **Comlpex Example**
 
 The following is an example of how to use the add plugin.  
 
@@ -552,7 +585,8 @@ The following is an example of how to use the add plugin.
 | ------ | ----------- |
 | display | Array that contains the plugins options to display |
 | add | Array, path representing the current most display container element to watch |
-| list | all objects added exist in a "list" plugion object, this is where those options are set |
+| add | Object, display object to add |
+| list | ignored if add.constructor==Object, all objects added exist in a "list" plugin object, this is where those options are set |
 | chooser | Object, of display Objects, when a user clicks the add button, the option matching the chooser will be used |
 | submitText | default "Add", the submit button text |
 | errorText | default "Some fields are not filled out properly", error show when validation fails |
