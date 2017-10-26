@@ -449,6 +449,8 @@ This example shows how to manage a list of text inputs.
 
 This example shows how to manage a hash of text and password inputs. 
 
+**Note Note Note** All objects in a hash container require an additional argument `name`, the name represents the key in the data structure.
+
 ```
 <ChtrForm display={{
         label: "Simple Hash example",
@@ -567,6 +569,68 @@ The following is an example of how to use the add plugin.
 
 ## Watch example(s)
 
+* **Example**
+
+THe following example shows how to use watch in a hash container.
+
+Note Note Note! Unlike other plugins, watch does not contain what it is watching.
+
+```
+<ChtrForm display={{
+  "type": "hash",
+  "display": [
+    {
+      "type": "select",
+      "label": "choose a subform",
+      "input": "one",
+      "name": "choose",
+      "data": [
+        {
+          "value": "one",
+          "label": "Form One"
+        },
+        {
+          "value": "two",
+          "label": "Form Two"
+        }
+      ]
+    },
+    {
+      "type": "watch",
+      "name": "subform",
+      "watch": [
+        "choose"
+      ],
+      "setDisplay": "one",
+      "displays": {
+        "one": {
+          "type": "text",
+          "label": "test"
+        },
+        "two": {
+          "type": "checkbox",
+          "label": "subform checkbox"
+        }
+      }
+    }
+  ]
+}} 
+/>
+```
+
+* **Options**
+
+| option | description |
+| ------ | ----------- |
+| watch  | path to the parrent container value to watch |
+| setDisplay | which display to use from "displays" |
+| displays | Object of Objects, each key should map to the `watch` `path` value. |
+
+
+## Creating plugins
+
+Todo..
+
 # Built in demo
 
 The project contains a very basic demo which can be accessed by by issuing the following command, in the project folder.
@@ -576,3 +640,9 @@ npm run demo
 ```
 
 From there the demo/index.html can be viewed locally.
+
+# Todo
+
+1. More extensive unit tests
+2. Some error checking for add and watch
+3. More documentation
