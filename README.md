@@ -630,7 +630,69 @@ Note Note Note! Unlike other plugins, watch does not contain what it is watching
 
 ## Creating plugins
 
-Todo..
+The plugin api is very flexible and powerful, it was designed to allow the encapsulation of any plugin within any plugin.  This means a list can contain a list, hash, add and and any other assortment of plugins.  Any plugin created must follow this mindset.
+
+When creating a plugin the static buildData(props) method must be implemented.  The buildData(props) provides the default data structure for a given dataPath.
+
+* **Example from the text plugin**
+
+```
+    static buildData( props ) {
+
+        const input = props.hasOwnProperty( 'input' ) ? 
+          props.input 
+            : 
+          ChtrFormTextInput.defaultProps.input;
+        return input == null ? "" : input;
+    }
+```
+
+
+* **Plugin intantiation arguments**
+
+Plugins are rendered with the following arguments
+```
+  <Plugin
+    key={key} {...displayArguments}
+    root={root}
+    displayPath={displayPath}
+    dataPath={dataPath}
+    {...root.defaultHandlers() }
+    input={root.getPathValue( this.state, dataPath )}
+```
+
+* **Plugin Options**
+
+| option | description |
+| ------ | ----------- |
+| key    | required by the react api |
+| root   | the top level ChtrForm object instance |
+| displayArguments | a copy of the prop arguments for this plugin |
+| displayPath | a **path** array representing the display configuration in the root.state data structure |
+| dataPath | a **path** array representing the stored in root.state |
+| root.defaultHandlers() | object event handlers |
+| input | the default data structure for this object |
+
+** **root.defaultHandelers()** 
+
+
+| name | description | arguments |
+| ---- | ----------- | --------- |
+| onChange | the function used to push state into the `root` | (dataPath,displayPath,newProps) |
+| onSubmit | allows the plugin to call the submit method of `root` | () |
+| onMove | called by a plugin to move itself within a list plugin | ( ( dataPath, displayPath, +1|\-1 ) |
+| onDelete | called by a plugin to delete a plugin from a list plugin | ( list_id, dataPath, displayPath ) | 
+| onValidate | used to call validation for a given plugin | ( dataPath, displayPath, props, state ) |
+
+** **Registering a plugin for events**
+
+The `root` object offers the following event handler registration methods, and clean up methods
+| name | description | where to initalize | arguments |
+| ---- | ----------- | ----- | --------- |
+| registerSubmitCheck| registeres a pre-submit check | componentDidMount,componentWillReceiveProps | (dataPath,function) |
+| registerWatch | registeres the monitoring of a value | componentDidMount,componentWillReceiveProps | (dataPath,function |
+| deleteWatch | deletes a callback for dataPath | componentWillReceiveProps,componentWillUnmount | (dataPath) |
+| deleteSubmitCheck | deletes a submit check | componentWillUnmount,componentWillReceiveProps | (dataPath) |
 
 # Built in demo
 
