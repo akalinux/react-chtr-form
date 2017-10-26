@@ -34,10 +34,6 @@ Objects are typically displayed in containers; Containers represent data structu
 * **path** Path(s) are a list that represent where in the object structure this thing exists.
 * **scalar** primitive data value
 
-# Getting Data out
-
-`ChtrFrom` provides a collection of callback handlers that return a semi deep copy of the the internal data.
-
 
 ## ChtrForm Options
 
@@ -55,6 +51,11 @@ Objects are typically displayed in containers; Containers represent data structu
 |    name | default "form", used for internal key geneation ( recommended this be set to something unique ) |
 |    label | default "", header text of the form |
 |    errorText | default "Some fields are not filled out properly" |
+
+
+# Getting Data out
+
+`ChtrFrom` provides a collection of callback handlers that return a semi deep copy of the the internal data.
 
 * **Event Handlers**
 
