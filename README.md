@@ -533,7 +533,7 @@ The following is an example of how to use the add plugin.
                 display: {
                     type: 'hash', display: [
                         { name: 'label', type: 'text', label: "label", required: true },
-                        { name: 'value', type: 'text', label: "value", required: true },
+                        { name: 'value', type: 'text', label: "value", required: true }
                         {
                             name: 'forms', 
                             type: 'select', 
@@ -558,7 +558,7 @@ The following is an example of how to use the add plugin.
                 type: 'hash',
                 display: [
                     { name: 'label', type: 'text', label: "label", required: true },
-                    { name: 'value', type: 'text', label: "value", required: true },
+                    { name: 'value', type: 'text', label: "value", required: true }
                 ]
             },
             Formal: {
