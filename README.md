@@ -659,6 +659,8 @@ Plugins are rendered with the following arguments
     dataPath={dataPath}
     {...root.defaultHandlers() }
     input={root.getPathValue( this.state, dataPath )}
+  />
+    
 ```
 
 * **Plugin Options**
