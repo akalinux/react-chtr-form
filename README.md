@@ -659,14 +659,14 @@ Note Note Note! Unlike other plugins, watch does not contain what it is watching
 
 | option | description |
 | ------ | ----------- |
-| watch  | path to the parrent container value to watch |
+| watch  | path to the parent container value to watch |
 | setDisplay | which display to use from "displays" |
 | displays | Object of Objects, each key should map to the `watch` `path` value. |
 
 
 ## Creating plugins
 
-The plugin api is very flexible and powerful, it was designed to allow the encapsulation of any plugin within any plugin.  This means a list can contain a list, hash, add and and any other assortment of plugins.  Any plugin created must follow this mindset.
+The plugin API is very flexible and powerful, it was designed to allow the encapsulation of any plugin within any plugin.  This means a list can contain a list, hash, add and and any other assortment of plugins.  Any plugin created must follow this mind set.
 
 When creating a plugin the static buildData(props) method must be implemented.  The buildData(props) provides the default data structure for a given dataPath.
 
