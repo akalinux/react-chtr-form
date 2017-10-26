@@ -1,7 +1,7 @@
 {
   "name": "react-chtr-form",
   "version": "1.0.28",
-  "description": "Chtr React Data Centric form generation library",
+  "description": "React Data Centric form generation library",
   "main": "build/chtr-form.js",
   "scripts": {
     "test": "mocha --require babel-register ./test/test.jsx",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@git.corp.chartercom.com:7999/itccc/react-chtr-form.git"
+    "url": "https://github.com/akalinux/react-chtr-form.git"
   },
   "keywords": [
     "form",
@@ -25,7 +25,7 @@
     "build/",
     "chtr-form.css"
   ],
-  "author": "Michael Shipper <Michael.Shipper@Charter.com>",
+  "author": "Michael Shipper <akalinux@cpan.org>",
   "license": "MIT",
   "dependencies": {
     "react": "16.x",
