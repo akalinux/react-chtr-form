@@ -726,10 +726,10 @@ Plugins are rendered with the following arguments
 
 The `root` object offers the following event handler registration methods, and clean up methods.
 
-| name | description | where to initalize | arguments |
+| name | description | where to initialize | arguments |
 | ---- | ----------- | ----- | --------- |
-| registerSubmitCheck| registeres a pre-submit check | componentDidMount,componentWillReceiveProps | (dataPath,function) |
-| registerWatch | registeres the monitoring of a value | componentDidMount,componentWillReceiveProps | (dataPath,function) |
+| registerSubmitCheck| registers a pre-submit check | componentDidMount,componentWillReceiveProps | (dataPath,function) |
+| registerWatch | registers the monitoring of a value | componentDidMount,componentWillReceiveProps | (dataPath,function) |
 | deleteWatch | deletes a callback for dataPath | componentWillReceiveProps,componentWillUnmount | (dataPath) |
 | deleteSubmitCheck | deletes a submit check | componentWillUnmount,componentWillReceiveProps | (dataPath) |
 
