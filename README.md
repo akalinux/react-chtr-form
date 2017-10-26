@@ -682,7 +682,7 @@ Plugins are rendered with the following arguments
 | ---- | ----------- | --------- |
 | onChange | the function used to push state into the `root` | (dataPath,displayPath,newProps) |
 | onSubmit | allows the plugin to call the submit method of `root` | () |
-| onMove | called by a plugin to move itself within a list plugin | ( dataPath, displayPath, +1|\-1 ) |
+| onMove | called by a plugin to move itself within a list plugin | ( dataPath, displayPath, +1\|-1 ) |
 | onDelete | called by a plugin to delete a plugin from a list plugin | ( list_id, dataPath, displayPath ) | 
 | onValidate | used to call validation for a given plugin | ( dataPath, displayPath, props, state ) |
 
