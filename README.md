@@ -697,6 +697,22 @@ The `root` object offers the following event handler registration methods, and c
 | deleteWatch | deletes a callback for dataPath | componentWillReceiveProps,componentWillUnmount | (dataPath) |
 | deleteSubmitCheck | deletes a submit check | componentWillUnmount,componentWillReceiveProps | (dataPath) |
 
+
+* **Registering your plugin**
+
+Import the module registry.
+
+```
+import { ChtFormElements } from 'react-chtr-form/build/chtr-form-elements.jsx';
+```
+
+Register your module
+
+```
+ChtFormElements['your-plugin']=YourPluginClass;
+```
+
+
 # Built in demo
 
 The project contains a very basic demo which can be accessed by by issuing the following command, in the project folder.
