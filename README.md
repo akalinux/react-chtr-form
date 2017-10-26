@@ -686,7 +686,8 @@ Plugins are rendered with the following arguments
 
 ** **Registering a plugin for events**
 
-The `root` object offers the following event handler registration methods, and clean up methods
+The `root` object offers the following event handler registration methods, and clean up methods.
+
 | name | description | where to initalize | arguments |
 | ---- | ----------- | ----- | --------- |
 | registerSubmitCheck| registeres a pre-submit check | componentDidMount,componentWillReceiveProps | (dataPath,function) |
