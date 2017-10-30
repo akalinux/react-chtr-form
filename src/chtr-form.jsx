@@ -1,7 +1,7 @@
 'use strict';
 import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
-import { cloneObject, mergeObjects, objectsDiffer, cloneProps  } from 'react-chtr-object-methods';
+import { cloneObject, mergeObjects, objectsDiffer, cloneProps } from 'react-chtr-object-methods';
 import { ChtFormElements } from './chtr-form-elements.js';
 import './chtr-form-input.js';
 import { ChtrList } from './chtr-form-container-list.js';
@@ -24,7 +24,7 @@ class ChtrForm extends React.Component {
 
         let data;
         if ( ChtFormElements.hasOwnProperty( props.display.type ) ) {
-            const display = cloneObject(props.display);
+            const display = cloneObject( props.display );
             display.displayPath = ['display']
             display.dataPath = ['data']
             data = ChtFormElements[target.display.type].buildData( display );
@@ -47,20 +47,20 @@ class ChtrForm extends React.Component {
         super( props );
         this.state = this.buildStateFromProps( props );
         this.submitChecks = {};
-        this.watch={};
+        this.watch = {};
 
         this.handleChange = this.handleChange.bind( this );
         this.handleValidate = this.handleValidate.bind( this );
 
     }
-    
-    registerWatch (dataPath,callback) {
-        const key=dataPath.join('.');
-        this.watch[key]=callback;
+
+    registerWatch( dataPath, callback ) {
+        const key = dataPath.join( '.' );
+        this.watch[key] = callback;
     }
-    
-    deleteWatch (dataPath) {
-        const key=dataPath.join('.');
+
+    deleteWatch( dataPath ) {
+        const key = dataPath.join( '.' );
         delete this.watch[key];
     }
 
@@ -165,7 +165,7 @@ class ChtrForm extends React.Component {
             }
             this.setState( state );
         }
-        this.props.onChange(cloneObject(state));
+        this.props.onChange( cloneObject( state ) );
 
     }
 
@@ -195,11 +195,11 @@ class ChtrForm extends React.Component {
 
         this.pushPathValue( state, displayPath, props );
         this.pushPathValue( state, dataPath, props.input );
-        const key=dataPath.join('.');
-        
-        
-        if(this.watch.hasOwnProperty(key)) {
-            this.watch[key](props.input,state);
+        const key = dataPath.join( '.' );
+
+
+        if ( this.watch.hasOwnProperty( key ) ) {
+            this.watch[key]( props.input, state );
         }
         this.setState( state );
         this.props.onChange( cloneObject( state ), dataPath.slice( 0 ) );
@@ -297,7 +297,7 @@ class ChtrForm extends React.Component {
         parentData[srcId] = dstData;
 
         this.setState( state );
-        this.props.onChange(cloneObject(state));
+        this.props.onChange( cloneObject( state ) );
 
     }
 
@@ -318,9 +318,14 @@ class ChtrForm extends React.Component {
             state.formError = true;
             this.setState( state );
         } else {
-            state.formError = false;
-            this.setState( state );
-            this.props.onSubmit( cloneObject( this.state.data ) );
+            if ( this.props.preSubmit( state.data,state.display ) ) {
+                state.formError = false;
+                this.setState( state );
+                this.props.onSubmit( cloneObject( this.state.data ),cloneObject(this.state.display) );
+            } else {
+                state.formError =true ;
+                this.setState( state );
+            }
         }
         delete this['validationFailed'];
 
@@ -332,9 +337,9 @@ class ChtrForm extends React.Component {
         this.props.onReset();
 
     }
-    
-    cloneData () {
-        return cloneObject(this.state.data);
+
+    cloneData() {
+        return cloneObject( this.state.data );
     }
 
     componentWillReceiveProps( props ) {
@@ -345,7 +350,7 @@ class ChtrForm extends React.Component {
     renderObject( row, displayPath, dataPath ) {
         const key = displayPath.join( '-' );
         if ( ChtFormElements.hasOwnProperty( row.type ) ) {
-            
+
             const Target = ChtFormElements[row.type];
             return <Target
                 key={key} {...row}
@@ -371,7 +376,7 @@ class ChtrForm extends React.Component {
 
                 <div className={this.state.classNameSubmitRow} >
                     {this.state.showReset ? <input className={this.state.classNameButton} onClick={this.handleReset.bind( this )} type="button" value={this.state.resetText} /> : ""}
-                    {this.state.showSubmit ? <input onClick={this.handleSubmit.bind( this )} className={this.state.classNameButton} type="button" value={this.state.submitText} /> : "" }
+                    {this.state.showSubmit ? <input onClick={this.handleSubmit.bind( this )} className={this.state.classNameButton} type="button" value={this.state.submitText} /> : ""}
                 </div>
             </div> );
     }
@@ -400,6 +405,7 @@ ChtrForm.defaultProps = {
     onSubmit: function() { },
     onReset: function() { },
     onChange: function() { },
+    preSubmit: function() { return true },
 };
 
 Object.assign( ChtrForm.defaultProps, css );
@@ -445,12 +451,12 @@ class ChtFormContainerAdd extends React.Component {
         const id = this.props.root.getPathValue( this.props.root.state, dataPath ).length;
         displayPath.push( id );
         dataPath.push( id );
-        if(this.state.add.constructor==Array) {
+        if ( this.state.add.constructor == Array ) {
             const display = cloneObject( this.state.chooser[this.props.root.getPathValue( this.state.form.data, this.state.add )] );
-            display.input = ChtFormElements.hasOwnProperty(display.type) ? ChtFormElements[display.type].buildData( display ) : null;
+            display.input = ChtFormElements.hasOwnProperty( display.type ) ? ChtFormElements[display.type].buildData( display ) : null;
             display.input = mergeObjects( display.input, this.state.form.data );
             this.props.onChange( dataPath, displayPath, display );
-            
+
         } else if ( ChtFormElements.hasOwnProperty( this.state.add.type ) ) {
             const display = cloneObject( this.state.add );
             display.input = ChtFormElements[this.state.add.type].buildData( display );
@@ -482,7 +488,7 @@ class ChtFormContainerAdd extends React.Component {
         const args = {};
         Object.assign( args, ChtFormContainerAdd.defaultFormProps, this.state.form );
 
-        return <ChtrForm {...args}  showReset={false} label={this.state.label} onReset={this.handleReset} onChange={this.handleChnage} onSubmit={this.handleSubmit} />
+        return <ChtrForm {...args} showReset={false} label={this.state.label} onReset={this.handleReset} onChange={this.handleChnage} onSubmit={this.handleSubmit} />
     }
 
     render() {

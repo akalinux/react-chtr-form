@@ -64,8 +64,9 @@ Objects are typically displayed in containers; Containers represent data structu
 | name | When its called | Arguments |
 | ---- | --------------- | --------- |
 | onChange | when a field changes | (data,path) |
-| onSubmit | when the submit button is pressed | (data) |
+| onSubmit | when the submit button is pressed | (data,display) |
 | onReset  | when the reset button is pressed  | () |
+| preSubmit | when onSubmit would be called this function is called, if it returns onSubmit will be called | (data,display) |
 
 * **Css Options**
 
